@@ -2,9 +2,10 @@
 #include<unordered_map>
 #include<string>
 using namespace std;
-class Solution{
-    public:
-    int Romantoint(string s){
+class Solution {
+public:
+    int romanToInt(string s) {
+        int ans = 0;
         unordered_map<char,int> roman = {
             {'I',1},
             {'V',5},
@@ -12,18 +13,18 @@ class Solution{
             {'L',50},
             {'C',100},
             {'D',500},
-            {'M',1000}
+            {'M',1000},
         };
-        int res = 0;
         for(int i=0; i<s.size()-1;i++){
             if(roman[s[i]] < roman[s[i+1]]){
-                res -= roman[s[i]];
+                ans -= roman[s[i]];
             }
             else{
-                res += roman[s[i]];
+                ans += roman[s[i]];
             }
         }
-        return res + roman[s.back()];
+        ans += roman[s.back()];
+        return ans;
     }
 };
 int main(){
