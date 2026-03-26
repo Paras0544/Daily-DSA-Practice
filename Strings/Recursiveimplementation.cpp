@@ -10,7 +10,7 @@ class Solution {
             return (sign * num);
         }
 
-        num = num*10 + (s[i] - '0');
+        num = num*10 + (s[i] - '0'); //update num with current digit 
         return helper(s,i+1,num,sign);
     }
     int myAtoi(string s){
