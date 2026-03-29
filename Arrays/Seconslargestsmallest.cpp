@@ -14,9 +14,6 @@ int secondsmallest(int arr[],int n){
             secondsmall = small;
             small = arr[i];
         }
-        else if(arr[i] < secondsmall && arr[i] != small){
-            secondsmall = arr[i];
-        }
     }
     return secondsmall;
 }
@@ -31,9 +28,6 @@ int secondlargest(int arr[],int n){
         if(arr[i] > large){
             secondlarge = large;
             large = arr[i];
-        }
-        else if(arr[i] > secondlarge && arr[i] != large){
-            secondlarge = arr[i];
         }
     }
     return secondlarge;
