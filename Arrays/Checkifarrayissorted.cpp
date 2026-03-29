@@ -2,25 +2,30 @@
 using namespace std;
 
 class Solution {
-public:
-   bool isSorted(int arr[], int n){
-    for(int i=1; i<n; i++){
-        if(arr[i] < arr[i-1]){
-            return false;
+    public:
+    bool isSorted(int arr[],int n){
+        if(n == 0 || n == 1){
+            return true;
         }
+        for(int i=1; i<n; i++){ // here we are starting from 1 because we will compare the current element with the previous element
+            if(arr[i] < arr[i-1]){ // if the current element is less than the previous element then the array is not sorted
+                return false;
+            }
+        }
+        return true;
     }
-    return true;
-   }
 };
+
 int main(){
     int arr[] = {1,2,3,4,5};
     int n = sizeof(arr)/sizeof(arr[0]);
-    Solution ob;
-    if(ob.isSorted(arr,n)){
-        cout<<"The array is sorted in non-decreasing order."<<endl;
+
+    Solution sol;
+
+    if(sol.isSorted(arr,n)){
+        cout<<"The array is sorted."<<endl;
     }
     else{
-        cout<<"The array is not sorted in non-decreasing order."<<endl;
+        cout<<"The array is not sorted."<<endl;
     }
-    return 0;
-};
+}

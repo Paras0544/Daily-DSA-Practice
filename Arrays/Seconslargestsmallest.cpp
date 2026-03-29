@@ -1,44 +1,56 @@
 #include<iostream>
 using namespace std;
-class Solution {
-public:
-int secondsmallest(int arr[],int n){
-    if(n<2){
-        return - 1;
-    }
-    int small = INT_MAX;
-    int secondsmall = INT_MAX;
 
-    for(int i=0; i<n; i++){
-        if(arr[i] < small){
-            secondsmall = small;
-            small = arr[i];
+class Solution{
+    public:
+    int SecondSmallest(int arr[], int n){
+        if(n < 2){
+            return -1;
         }
-    }
-    return secondsmall;
-}
-int secondlargest(int arr[],int n){
-    if(n<2){
-        return -1;
-    }
-    int large = INT_MIN;
-    int secondlarge = INT_MIN;
 
-    for(int i=0; i<n; i++){
-        if(arr[i] > large){
-            secondlarge = large;
-            large = arr[i];
+        int smallest = INT_MAX;
+        int secondsmallest = INT_MAX;
+
+        for(int i=0; i<n; i++){
+            if(arr[i] < smallest){
+                secondsmallest = smallest;
+                smallest = arr[i];
+            }
+            else if(arr[i] < secondsmallest && arr[i] > smallest){
+                secondsmallest = arr[i];
+            }
         }
+        return secondsmallest;
     }
-    return secondlarge;
-}
+
+    int SecondLargest(int arr[], int n){
+        if(n<2){
+            return -1;
+        }
+        int largest = INT_MIN;
+        int secondlargest = INT_MIN;
+
+        for(int i=0; i<n; i++){
+            if(arr[i] > largest){
+                secondlargest = largest;
+                largest = arr[i];
+            }
+            else if(arr[i] > secondlargest && arr[i] < largest){
+                secondlargest = arr[i];
+            }
+        }
+        return secondlargest;
+    }
 };
 
 int main(){
-    int arr[] = {2,3,4,5,6};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    Solution ob;
-    cout<<"Second smallest element is: "<<ob.secondsmallest(arr,n)<<endl;
-    cout<<"Second largest element is: "<<ob.secondlargest(arr,n)<<endl;
+    int arr[] = {2,7,8,9,6,4};
+    int n = 6;
+    Solution sol;
+
+    cout<<"the second smallest element in the arrays is:"<<sol.SecondSmallest(arr,n)<<endl;
+    cout<<"the second largest element in the arrays is:"<<sol.SecondLargest(arr,n)<<endl;
     return 0;
-};
+}
+
+

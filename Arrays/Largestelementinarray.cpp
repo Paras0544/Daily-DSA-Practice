@@ -1,21 +1,26 @@
 #include<iostream>
+#include<vector>
 using namespace std;
+
 class Solution {
     public:
-    int largestelement(int arr[],int n){
+    int LargestElement(int arr[], int n){
         int max = arr[0];
-        for(int i=1;i<n;i++){
-            if(arr[i]>max){
+
+        for(int i=0; i<n; i++){
+            if(arr[i] > max){
                 max = arr[i];
             }
         }
         return max;
     }
 };
+
 int main(){
-    int arr[] = {2,3,4,5,6};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    Solution ob;
-    cout<<ob.largestelement(arr,n)<<endl;
+    int arr[] = {2,7,8,9,6,4};
+    int n = 6;
+    Solution sol;
+
+    cout<<"the largest element in the arrays is:"<<sol.LargestElement(arr,n)<<endl;
     return 0;
-};
+}
