@@ -19,16 +19,16 @@ class Solution{
         if(head == NULL || head->next == NULL){
             return head;
         }
-        Node* temp = head;
+        Node* curr = head;
         Node* front = head->next;
-        temp->next = NULL;
+        curr->next = NULL;
         while(front != NULL){
-            Node* temp1 = front->next;
-            front->next = temp;
-            temp = front;
-            front = temp1;
+            Node* temp = front->next;
+            front->next = curr;
+            curr = front;
+            front = temp;
         }
-        return temp;
+        return curr;
     }
 };
 
