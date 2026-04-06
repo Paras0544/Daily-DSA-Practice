@@ -9,7 +9,7 @@ class Solution {
     string twoSumExists(vector<int> arr, int target){
         int n = arr.size();
 
-        vector<pair<int, int>> numsWithIndex;
+        vector<pair<int, int>> numsWithIndex; // to store the elements of the array along with their original indices
         for(int i = 0; i < n; i++){
             numsWithIndex.push_back({arr[i], i});
         }
