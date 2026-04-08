@@ -16,7 +16,7 @@ class Solution {
             return power(x*x, n/2); // if n is even, we can calculate x^n as (x^2)^(n/2)
         }
         else{
-            return x*power(x*x, n/2); // if n is odd, we can calculate x^n as x * (x^2)^(n/2)
+            return x*power(x, n-1); // if n is odd, we can calculate x^n as x * x^(n-1), and since n-1 is even, we can calculate x^(n-1) as (x^2)^((n-1)/2)
         }
         return x*power(x*x, n/2);
     }
