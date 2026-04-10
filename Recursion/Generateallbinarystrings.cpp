@@ -1,3 +1,4 @@
+// recursion + backtracking with conditions to avoid consecutive 1s in binary strings of length n
 #include<iostream>
 #include<vector>
 #include<string>
