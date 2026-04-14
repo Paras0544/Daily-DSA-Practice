@@ -15,7 +15,7 @@ class Solution {
 
             curr.push_back(nums[i]);
             backtrack(i+1,nums,curr,result);
-            curr.pop_back();
+            curr.pop_back(); 
         }
     }
 
