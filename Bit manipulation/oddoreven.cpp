@@ -5,7 +5,7 @@ class Solution {
 public:
     // Function to check if a number is odd
     bool isOdd(int n) {
-        return (n & 1) != 0;  // Return true if the least significant bit is 1 (number is odd), else false
+        return (n % 2 != 0);  // Return true if the least significant bit is 1 (number is odd), else false
     }
 };
 
