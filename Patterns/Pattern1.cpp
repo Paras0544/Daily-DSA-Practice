@@ -15,7 +15,7 @@ class Solution{
 
 int main(){
     int n = 7;
-    Solution s;
-    s.Pattern1(n);
+    Solution obj;
+    obj.Pattern1(n);
     return 0;
 }
