@@ -12,35 +12,25 @@ public:
 
         for(int i = 0; i < asteroid.size(); i++) {
 
-            // Positive asteroid
             if(asteroid[i] > 0) {
                 st.push(asteroid[i]);
             }
-
-            // Negative asteroid
             else {
-
-                // Destroy smaller positive asteroids
                 while(!st.empty() && st.top() > 0 &&
                       st.top() < abs(asteroid[i])) {
                     st.pop();
                 }
 
-                // Equal size -> both destroy
                 if(!st.empty() && st.top() > 0 &&
                    st.top() == abs(asteroid[i])) {
                     st.pop();
                 }
-
-                // Push negative asteroid if:
-                // stack empty OR top is negative
                 else if(st.empty() || st.top() < 0) {
                     st.push(asteroid[i]);
                 }
             }
         }
 
-        // Convert stack to vector
         vector<int> ans(st.size());
 
         for(int i = st.size() - 1; i >= 0; i--) {
