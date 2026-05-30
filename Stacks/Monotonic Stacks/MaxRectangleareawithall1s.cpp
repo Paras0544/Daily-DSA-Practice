@@ -12,6 +12,7 @@ public:
         int n = heights.size();
         int maxArea = 0;
         stack<int> st;
+        heights.push_back(0); // we add a 0 at the end to make sure we pop all the elements from the stack at the end
 
         for(int i = 0; i < n; i++) {
 
@@ -28,7 +29,7 @@ public:
             st.push(i);
         }
 
-        // IMPORTANT PART
+        // IMPORTANT PART, wither add 0 at the end to prov=cess all elemenst 
         while(!st.empty()) {
 
             int height = heights[st.top()];
